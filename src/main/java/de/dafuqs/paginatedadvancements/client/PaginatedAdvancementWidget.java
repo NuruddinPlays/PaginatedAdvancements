@@ -34,8 +34,7 @@ public class PaginatedAdvancementWidget extends AdvancementWidget {
 		this.frameWrapper = AdvancementFrameDataLoader.get(accessor.getAdvancement().getAdvancementEntry().id());
 		int requirementCount = placedAdvancement.getAdvancement().requirements().getLength();
 		int k = requirementCount > 1 ? client.textRenderer.getWidth("  ") + client.textRenderer.getWidth("0") * String.valueOf(requirementCount).length() * 2 + client.textRenderer.getWidth("/") : 0;
-		OrderedText title = Language.getInstance().reorder(client.textRenderer.trimToWidth(display.getTitle(), 163));
-		int l = 29 + client.textRenderer.getWidth(title) + k;
+		int l = 29 + client.textRenderer.getWidth(accessor.getTitle()) + k;
 		if (this.frameWrapper != null) {
 			this.description = Language.getInstance().reorder(accessor.invokeWrapDescription(Texts.setStyleIfAbsent(display.getDescription().copy(), Style.EMPTY.withColor(frameWrapper.getTitleFormat())), l));
 		} else {

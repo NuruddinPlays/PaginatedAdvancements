@@ -28,10 +28,10 @@
     "paginatedadvancements.mixins.json"
   ],
   "depends": {
-    "minecraft": ">=1.20.3",
+    "minecraft": ">=1.20.6",
     "fabricloader": "*",
     "fabric-api": "*",
-    "cloth-config": ">=11.0.98"
+    "cloth-config": "*"
   },
   "breaks": {
     "advancements-enlarger": "*",

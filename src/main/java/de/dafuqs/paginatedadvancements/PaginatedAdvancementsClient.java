@@ -23,7 +23,7 @@ public class PaginatedAdvancementsClient implements ClientModInitializer {
 	
 	@Contract(value = "_ -> new", pure = true)
 	public static @NotNull Identifier locate(String name) {
-		return new Identifier(MOD_ID, name);
+		return Identifier.of(MOD_ID, name);
 	}
 	
 	@Override

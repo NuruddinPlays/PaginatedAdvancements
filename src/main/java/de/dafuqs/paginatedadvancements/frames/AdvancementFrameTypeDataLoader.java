@@ -32,7 +32,7 @@ public class AdvancementFrameTypeDataLoader extends JsonDataLoader implements Id
 				
 				
 				String name = jsonObject.get("name").getAsString();
-				Identifier id = new Identifier(identifier.getNamespace(), name);
+				Identifier id = Identifier.of(identifier.getNamespace(), name);
 				int itemOffsetX = JsonHelper.getInt(jsonObject, "item_offset_x", 0);
 				int itemOffsetY = JsonHelper.getInt(jsonObject, "item_offset_y", 0);
 				String formattingString = JsonHelper.getString(jsonObject, "formatting", "green");
@@ -40,12 +40,12 @@ public class AdvancementFrameTypeDataLoader extends JsonDataLoader implements Id
 				
 				if (formatting == null) {
 					// green is the vanilla default for most AdvancementFrames
-					PaginatedAdvancementsClient.LOGGER.error("Formatting for frame '" + id + "' is invalid: '" + formattingString + "'. Will use default 'green'");
+					PaginatedAdvancementsClient.LOGGER.error("Formatting for frame '{}' is invalid: '{}'. Will use default 'green'", id, formattingString);
 					formatting = Formatting.GREEN;
 				}
 				
-				Identifier textureObtained = new Identifier(identifier.getNamespace(), "advancements/" + name + "_obtained");
-				Identifier textureUnobtained = new Identifier(identifier.getNamespace(), "advancements/" + name + "_unobtained");
+				Identifier textureObtained = Identifier.of(identifier.getNamespace(), "advancements/" + name + "_obtained");
+				Identifier textureUnobtained = Identifier.of(identifier.getNamespace(), "advancements/" + name + "_unobtained");
 				
 				PaginatedAdvancementFrame frame = new PaginatedAdvancementFrame(id, textureObtained, textureUnobtained, itemOffsetX, itemOffsetY, formatting);
 				FRAMES.put(id, frame);

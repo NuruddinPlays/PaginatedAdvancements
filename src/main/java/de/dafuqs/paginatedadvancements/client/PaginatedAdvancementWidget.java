@@ -19,7 +19,7 @@ import java.util.*;
 @Environment(EnvType.CLIENT)
 public class PaginatedAdvancementWidget extends AdvancementWidget {
 	
-	private static final Identifier TITLE_BOX_TEXTURE = new Identifier("advancements/title_box");
+	private static final Identifier TITLE_BOX_TEXTURE = Identifier.ofVanilla("advancements/title_box");
 	protected List<OrderedText> description;
 	
 	protected @Nullable FrameWrapper frameWrapper;

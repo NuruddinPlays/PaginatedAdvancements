@@ -17,8 +17,8 @@ import java.util.*;
 
 public class PaginatedAdvancementScreen extends AdvancementsScreen implements ClientAdvancementManager.Listener {
 	
-	public static final Identifier PAGINATION_TEXTURE = new Identifier("paginatedadvancements", "textures/gui/buttons.png");
-	public static final Identifier WINDOW_TEXTURE = new Identifier("textures/gui/advancements/window.png");
+	public static final Identifier PAGINATION_TEXTURE = PaginatedAdvancementsClient.locate("textures/gui/buttons.png");
+	public static final Identifier WINDOW_TEXTURE = Identifier.ofVanilla("textures/gui/advancements/window.png");
 	
 	private static final Text SAD_LABEL_TEXT = Text.translatable("advancements.sad_label");
 	private static final Text EMPTY_TEXT = Text.translatable("advancements.empty");

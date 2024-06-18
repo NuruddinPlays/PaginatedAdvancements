@@ -24,7 +24,7 @@ public abstract class FrameWrapper {
 		
 		@Override
 		public Identifier getId() {
-			return new Identifier(frame.asString());
+			return Identifier.of(frame.asString());
 		}
 		
 		@Override

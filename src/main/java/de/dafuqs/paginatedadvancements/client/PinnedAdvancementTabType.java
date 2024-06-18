@@ -12,11 +12,10 @@ public class PinnedAdvancementTabType {
 	public static final int WIDTH = 32;
 	public static final int HEIGHT = 28;
 	
-	
-	protected static final Identifier RIGHT_TOP_TEXTURE_SELECTED = new Identifier("advancements/tab_right_top_selected");
-	protected static final Identifier RIGHT_MIDDLE_TEXTURE_SELECTED = new Identifier("advancements/tab_right_middle_selected");
-	protected static final Identifier RIGHT_TOP_TEXTURE = new Identifier("advancements/tab_right_top");
-	protected static final Identifier RIGHT_MIDDLE_TEXTURE = new Identifier("advancements/tab_right_middle");
+	protected static final Identifier RIGHT_TOP_TEXTURE_SELECTED = Identifier.ofVanilla("advancements/tab_right_top_selected");
+	protected static final Identifier RIGHT_MIDDLE_TEXTURE_SELECTED = Identifier.ofVanilla("advancements/tab_right_middle_selected");
+	protected static final Identifier RIGHT_TOP_TEXTURE = Identifier.ofVanilla("advancements/tab_right_top");
+	protected static final Identifier RIGHT_MIDDLE_TEXTURE = Identifier.ofVanilla("advancements/tab_right_middle");
 	
 	public static int getHeightWithSpacing() {
 		return HEIGHT + PaginatedAdvancementsClient.CONFIG.SpacingBetweenPinnedTabs; // includes the empty space between tabs

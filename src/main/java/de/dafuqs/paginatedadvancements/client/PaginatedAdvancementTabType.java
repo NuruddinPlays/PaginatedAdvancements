@@ -10,10 +10,10 @@ public class PaginatedAdvancementTabType {
 	public static final int WIDTH = 28;
 	public static final int HEIGHT = 32;
 	
-	protected static final Identifier TOP_LEFT_TEXTURE_SELECTED = new Identifier("advancements/tab_above_left_selected");
-	protected static final Identifier TOP_MIDDLE_TEXTURE_SELECTED = new Identifier("advancements/tab_above_middle_selected");
-	protected static final Identifier TOP_LEFT_TEXTURE = new Identifier("advancements/tab_above_left");
-	protected static final Identifier TOP_MIDDLE_TEXTURE = new Identifier("advancements/tab_above_middle");
+	protected static final Identifier TOP_LEFT_TEXTURE_SELECTED = Identifier.ofVanilla("advancements/tab_above_left_selected");
+	protected static final Identifier TOP_MIDDLE_TEXTURE_SELECTED = Identifier.ofVanilla("advancements/tab_above_middle_selected");
+	protected static final Identifier TOP_LEFT_TEXTURE = Identifier.ofVanilla("advancements/tab_above_left");
+	protected static final Identifier TOP_MIDDLE_TEXTURE = Identifier.ofVanilla("advancements/tab_above_middle");
 	
 	public static int getWidthWithSpacing() {
 		return WIDTH + PaginatedAdvancementsClient.CONFIG.SpacingBetweenHorizontalTabs; // includes the empty space between tabs

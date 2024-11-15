@@ -28,9 +28,9 @@
     "paginatedadvancements.mixins.json"
   ],
   "depends": {
-    "minecraft": ">=1.21",
+    "minecraft": ">=1.21.3",
     "fabricloader": "*",
-    "fabric-api": ">=0.102.0",
+    "fabric-api": "*",
     "cloth-config": "*"
   },
   "breaks": {

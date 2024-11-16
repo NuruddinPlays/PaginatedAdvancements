@@ -9,6 +9,7 @@ import net.minecraft.client.*;
 import net.minecraft.client.font.*;
 import net.minecraft.client.gui.*;
 import net.minecraft.client.gui.screen.advancement.*;
+import net.minecraft.client.render.*;
 import net.minecraft.text.*;
 import net.minecraft.util.*;
 import net.minecraft.util.math.*;
@@ -64,10 +65,10 @@ public class PaginatedAdvancementWidget extends AdvancementWidget {
 			Identifier advancementID = accessor.getAdvancement().getAdvancementEntry().id();
 			@Nullable FrameWrapper frameWrapper = AdvancementFrameDataLoader.get(advancementID);
 			if (frameWrapper != null) {
-				context.drawGuiTexture(frameWrapper.getTexture(advancementObtainedStatus, accessor.getDisplay().getFrame()), x + accessor.getX() + 3, y + accessor.getY(), 26, 26);
+				context.drawGuiTexture(RenderLayer::getGuiTextured, frameWrapper.getTexture(advancementObtainedStatus, accessor.getDisplay().getFrame()), x + accessor.getX() + 3, y + accessor.getY(), 26, 26);
 				context.drawItemWithoutEntity(accessor.getDisplay().getIcon(), x + accessor.getX() + 8 + frameWrapper.getItemOffsetX(), y + accessor.getY() + 5 + frameWrapper.getItemOffsetY());
 			} else {
-				context.drawGuiTexture(advancementObtainedStatus.getFrameTexture(accessor.getDisplay().getFrame()), x + accessor.getX() + 3, y + accessor.getY(), 26, 26);
+				context.drawGuiTexture(RenderLayer::getGuiTextured, advancementObtainedStatus.getFrameTexture(accessor.getDisplay().getFrame()), x + accessor.getX() + 3, y + accessor.getY(), 26, 26);
 				context.drawItemWithoutEntity(accessor.getDisplay().getIcon(), x + accessor.getX() + 8, y + accessor.getY() + 5);
 			}
 		}
@@ -130,19 +131,19 @@ public class PaginatedAdvancementWidget extends AdvancementWidget {
 		int n = 32 + this.description.size() * 9;
 		if (!this.description.isEmpty()) {
 			if (bl2) {
-				context.drawGuiTexture(TITLE_BOX_TEXTURE, startX, l + 26 - n, accessor.getWidth(), n);
+				context.drawGuiTexture(RenderLayer::getGuiTextured, TITLE_BOX_TEXTURE, startX, l + 26 - n, accessor.getWidth(), n);
 			} else {
-				context.drawGuiTexture(TITLE_BOX_TEXTURE, startX, l, accessor.getWidth(), n);
+				context.drawGuiTexture(RenderLayer::getGuiTextured, TITLE_BOX_TEXTURE, startX, l, accessor.getWidth(), n);
 			}
 		}
 		
-		context.drawGuiTexture(advancementObtainedStatus.getBoxTexture(), 200, 26, 0, 0, startX, l, j, 26);
-		context.drawGuiTexture(advancementObtainedStatus2.getBoxTexture(), 200, 26, 200 - k, 0, startX + j, l, k, 26);
+		context.drawGuiTexture(RenderLayer::getGuiTextured, advancementObtainedStatus.getBoxTexture(), 200, 26, 0, 0, startX, l, j, 26);
+		context.drawGuiTexture(RenderLayer::getGuiTextured, advancementObtainedStatus2.getBoxTexture(), 200, 26, 200 - k, 0, startX + j, l, k, 26);
 		
 		if (this.frameWrapper != null) {
-			context.drawGuiTexture(this.frameWrapper.getTexture(advancementObtainedStatus3, accessor.getDisplay().getFrame()), originX + accessor.getX() + 3, originY + accessor.getY(), 26, 26);
+			context.drawGuiTexture(RenderLayer::getGuiTextured, this.frameWrapper.getTexture(advancementObtainedStatus3, accessor.getDisplay().getFrame()), originX + accessor.getX() + 3, originY + accessor.getY(), 26, 26);
 		} else {
-			context.drawGuiTexture(advancementObtainedStatus3.getFrameTexture(accessor.getDisplay().getFrame()), originX + accessor.getX() + 3, originY + accessor.getY(), 26, 26);
+			context.drawGuiTexture(RenderLayer::getGuiTextured, advancementObtainedStatus3.getFrameTexture(accessor.getDisplay().getFrame()), originX + accessor.getX() + 3, originY + accessor.getY(), 26, 26);
 		}
 		
 		if (shouldRenderToTheLeft) {

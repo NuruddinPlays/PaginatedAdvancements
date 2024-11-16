@@ -8,7 +8,6 @@ import org.jetbrains.annotations.*;
 
 public abstract class FrameWrapper {
 	
-	public abstract Identifier getId();
 	public abstract int getItemOffsetX();
 	public abstract int getItemOffsetY();
 	public abstract Formatting getTitleFormat();
@@ -20,11 +19,6 @@ public abstract class FrameWrapper {
 		
 		private VanillaFrameWrapper(AdvancementFrame frame) {
 			this.frame = frame;
-		}
-		
-		@Override
-		public Identifier getId() {
-			return Identifier.of(frame.asString());
 		}
 		
 		@Override
@@ -53,11 +47,6 @@ public abstract class FrameWrapper {
 		
 		private PaginatedFrameWrapper(PaginatedAdvancementFrame frame) {
 			this.frame = frame;
-		}
-		
-		@Override
-		public Identifier getId() {
-			return frame.getId();
 		}
 		
 		@Override
@@ -94,7 +83,7 @@ public abstract class FrameWrapper {
 			}
 		}
 		
-		@Nullable PaginatedAdvancementFrame paginatedFrame = AdvancementFrameTypeDataLoader.get(frame);
+		@Nullable PaginatedAdvancementFrame paginatedFrame = AdvancementFrameTypeDataLoader.getFrameForAdvancement(frame);
 		return paginatedFrame == null ? null : new PaginatedFrameWrapper(paginatedFrame);
 	}
 	
